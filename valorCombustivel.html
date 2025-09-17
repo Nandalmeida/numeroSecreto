@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<h3>Álcool ou Gasolina?</h3>
+
+<strong><p>O carro andou 480 KM gastanto 40 Litros de gasolina</p></strong>
+<script>
+    let kilometros = 480;
+    let litro = 40;
+    let gasto_gas = kilometros / litro
+    document.write(`O carro fez ${gasto_gas} kilometros por litro de gasolina.`);
+</script>
+<strong><p>O carro andou 300 kM gastando 40 litros de álcoo, portanto quantos litros ele gastaria em 480 KM?</p></strong>
+<script>
+    let kilometros_al = 300;
+    let litro_al = 40;
+    let kilometragem_faltante = 480*litro_al/kilometros_al;
+    let gasto_al = 480/kilometragem_faltante;
+    let valor_km_gas = 1/gasto_gas*2.90;
+    let valor_km_al = 1/gasto_al*2.40
+    document.write(`O carro gastou ${kilometragem_faltante} litros de álcool para andar 480 KM`);
+    document.write(`<br>O carro gastou ${gasto_al} litros de álcool por kilometro`);
+    document.write(`<br>Em um kilometro custa R$${valor_km_al.toFixed(2)} para litros de álcool e R$${valor_km_gas.toFixed(2)} para litros de gasolina<br>`);
+
+    let reais = prompt("Quantos reais você quer converter? ");
+    function converterMoeda (reais){
+        return reais / 4.80;
+    }
+    let palavraReais = reais > 1? 'reais':'real';
+    document.write(`${reais} ${palavraReais} equivalem à ${converterMoeda(reais)} dólares<br>`);
+
+    function tabuada(numero, contador = 1) {
+    // caso base: parar quando chegar em 10
+    if (contador > 10) return;
+
+     document.write(`${numero} x ${contador} = ${numero * contador}<br>`);
+
+    // chamada recursiva, incrementando o contador
+    tabuada(numero, contador + 1);
+}
+
+console.log(tabuada(7));
+</script>
